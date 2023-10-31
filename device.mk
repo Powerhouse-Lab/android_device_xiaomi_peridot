@@ -202,6 +202,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.consumerir.xml
 
+# HWUI
+TARGET_USES_VULKAN := true
+
 # Init
 PRODUCT_PACKAGES += \
     charger_fw_fstab.qti \
