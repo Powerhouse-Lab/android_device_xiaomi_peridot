@@ -375,8 +375,12 @@ PRODUCT_PACKAGES += \
     NcmTetheringOverlay
 
 # LunarisDolby
-#PRODUCT_PACKAGES += \
- #   LunarisDolby
+PRODUCT_PACKAGES += \
+    LunarisDolby
+
+# Parts
+PRODUCT_PACKAGES += \
+    XiaomiParts
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
