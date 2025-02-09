@@ -119,7 +119,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.context_hub.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.context_hub.xml
 
-
 # Dexopt
 PRODUCT_SYSTEM_PROPERTIES += \
     pm.dexopt.post-boot=speed \
@@ -142,6 +141,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed
 OVERRIDE_DISABLE_DEXOPT_ALL := false
+
 
 # DSP
 PRODUCT_PACKAGES += \
