@@ -13,9 +13,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
-# Dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
-
 # pKVM
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
 
@@ -158,7 +155,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     dalvik.vm.heaptargetutilization?=0.75 \
     dalvik.vm.heapminfree?=512k \
     dalvik.vm.heapmaxfree?=8m
-
 
 # Display
 PRODUCT_PACKAGES += \
