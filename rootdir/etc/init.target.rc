@@ -186,6 +186,10 @@ service vendor.mdm_launcher /vendor/bin/sh /vendor/bin/init.mdm.sh
 on property:init.svc.vendor.per_mgr=running
     start vendor.per_proxy
 
+on property:sys.boot_completed=1
+    swapon_all /vendor/etc/fstab.zram
+    write /proc/sys/vm/swappiness 60
+
 on property:sys.shutdown.requested=*
     write /sys/kernel/qcom_rproc/shutdown_in_progress 1
     stop vendor.per_proxy
