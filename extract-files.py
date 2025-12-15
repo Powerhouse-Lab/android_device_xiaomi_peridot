@@ -68,6 +68,25 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .regex_replace('xml=version', 'xml version'),
     (
+        'odm/lib64/libCOppLceTonemapAPI.so',
+        'odm/lib64/libCS.so',
+        'odm/lib64/libSuperRaw.so',
+        'odm/lib64/libYTCommon.so',
+        'odm/lib64/libyuv2.so',
+    ): blob_fixup()
+        .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
+    (
+        'vendor/lib64/libcapiv2uvvendor.so',
+        'vendor/lib64/liblistensoundmodel2vendor.so',
+        'vendor/lib64/libVoiceSdk.so',
+    ): blob_fixup()
+        .replace_needed('libtensorflowlite_c.so', 'libtensorflowlite_c_vendor.so'),
+    (
+        'vendor/lib64/libdpps.so',
+        'vendor/lib64/libsnapdragoncolor-manager.so',
+    ): blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2_bp4a.so'),
+    (
         'odm/lib64/hw/camera.qcom.so',
         'odm/lib64/hw/camera.xiaomi.so',
         'odm/lib64/hw/com.qti.chi.override.so',
