@@ -259,19 +259,11 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed(
             'android.hardware.security.keymint-V3-ndk.so',
-<<<<<<< HEAD
             'android.hardware.security.keymint-bp4a.so'
         )
         .replace_needed(
             'libcppbor_external.so',
             'libcppbor_bp4a.so'
-=======
-            'android.hardware.security.keymintperidot.so'
-        )
-        .replace_needed(
-            'libcppbor_external.so',
-            'libcppbor_peridot.so'
->>>>>>> 48512a5 (Revert "peridot: Drop Strongbox and switch to android.hardware.authsecret@1.0-service")
     ),
     (
         'vendor/bin/qcc-vendor',
