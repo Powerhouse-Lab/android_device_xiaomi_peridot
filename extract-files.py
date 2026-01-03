@@ -259,11 +259,11 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed(
             'android.hardware.security.keymint-V3-ndk.so',
-            'android.hardware.security.keymintperidot.so'
+            'android.hardware.security.keymint-bp4a.so'
         )
         .replace_needed(
             'libcppbor_external.so',
-            'libcppbor_peridot.so'
+            'libcppbor_bp4a.so'
     ),
     (
         'vendor/bin/qcc-vendor',
