@@ -1,37 +1,57 @@
-cd hardware/qcom-caf/sm8650/audio/agm
-git fetch https://github.com/sm8635-dev/vendor_qcom_opensource_agm lineage-23.2-caf-sm8650
-git reset --hard FETCH_HEAD
-croot
+#!/bin/bash
 
-cd hardware/qcom-caf/sm8650/audio/graphservices
-git fetch https://github.com/LineageOS/android_vendor_qcom_opensource_audioreach-graphservices lineage-23.2-caf-sm8650
-git reset --hard FETCH_HEAD
-croot
+# Define colour codes
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+YELLOW="\033[1;33m"
+BLUE="\033[0;34m"
+CYAN="\033[0;36m"
+NC="\033[0m" # No Color
 
-cd hardware/qcom-caf/sm8650/audio/pal
-git fetch https://github.com/LineageOS/android_vendor_qcom_opensource_arpal-lx lineage-23.2-caf-sm8650
-git reset --hard FETCH_HEAD
-croot
+fatal() {
+    echo -e "${RED}[FATAL] $1${NC}"
+    return 1
+}
 
-cd hardware/qcom-caf/sm8650/audio/primary-hal
-git fetch https://github.com/LineageOS/android_hardware_qcom_audio-ar lineage-23.2-caf-sm8650
-git reset --hard FETCH_HEAD
-croot
+info() {
+    echo -e "${CYAN}$1${NC}"
+}
 
-cd hardware/lineage/interfaces
-git fetch https://github.com/sm8635-dev/hardware_lineage_interfaces sixteen
-git reset --hard FETCH_HEAD
-croot
+success() {
+    echo -e "${GREEN}$1${NC}"
+}
 
-cd device/lineage/sepolicy
-git fetch https://github.com/sm8635-dev/device_lineage_sepolicy sixteen
-git reset --hard FETCH_HEAD
-croot
+warn() {
+    echo -e "${YELLOW}$1${NC}"
+}
 
-cd frameworks/av
-git fetch https://github.com/sm8635-dev/frameworks_av
-git cherry-pick b17a39b6e6359f8cc5174de64dde58115459688d 09e19c1a215b1bd714e8dff4ca7f04c9e3eb6a50
-croot
+info "Cloning All resources"
 
-rm -rf vendor/yaap/signing/keys
-git clone https://github.com/Neon-Duchamp/keys.git -b yaap-keys vendor/yaap/signing/keys
+# Vendor
+info "Cloning vendor tree"
+git clone -b vos-qpr2 --depth 1 https://github.com/Powerhouse-Lab/proprietary_vendor_xiaomi_peridot.git vendor/xiaomi/peridot || fatal "Vendor tree clone failed!"
+
+# Kernel sources
+info "Cloning Kernel sources"
+git clone -b vos-qpr2 https://github.com/Powerhouse-Lab/android_kernel_xiaomi_sm8635 kernel/xiaomi/sm8635 || fatal "Kernel source clone failed!"
+
+warn "Cleaning kernel modules directory (if exists)"
+rm -rf kernel/xiaomi/sm8635-modules
+info "Cloning kernel modules"
+git clone -b lineage-23.0 https://github.com/Powerhouse-Lab/android_kernel_xiaomi_sm8635-modules.git kernel/xiaomi/sm8635-modules || fatal "Kernel modules clone failed!"
+
+warn "Cleaning kernel devicetrees directory (if exists)"
+rm -rf kernel/xiaomi/sm8635-devicetrees
+info "Cloning kernel devicetrees"
+git clone -b lineage-23.0 https://github.com/Powerhouse-Lab/android_kernel_xiaomi_sm8635-devicetrees.git kernel/xiaomi/sm8635-devicetrees || fatal "Kernel devicetrees clone failed!"
+
+# Hardware xiaomi
+info "Cloning hardware xiaomi dolby branch"
+warn "Cleaning hardware/xiaomi directory (if exists)"
+rm -rf hardware/xiaomi
+git clone -b lineage-23.0 https://github.com/Powerhouse-Lab/android_hardware_xiaomi.git hardware/xiaomi || fatal "Hardware xiaomi clone failed!"
+
+rm -rf ven
+success "All resources cloned successfully!"
+
+return 0
