@@ -1,3 +1,4 @@
+allow init sysfs_fastcharge:file { setattr };
 allow init block_device:blk_file setattr;
 allow init vendor_file:file execute;
 allow init debugfs_tracing_debug:dir mounton;
