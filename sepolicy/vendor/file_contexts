@@ -54,6 +54,9 @@
 /dev/mi_display/disp_feature u:object_r:vendor_displayfeature_device:s0
 /sys/devices/virtual/mi_display/disp_feature/disp-DSI-+[0-1](/.*)? u:object_r:vendor_sysfs_displayfeature:s0
 
+# FastCharge
+/sys/class/qcom-battery/fastcharge_enable                                                                u:object_r:sysfs_fastcharge:s0
+
 # Fingerprint
 /dev/goodix_fp u:object_r:vendor_fingerprint_device:s0
 /dev/xiaomi-fp u:object_r:vendor_fingerprint_device:s0
