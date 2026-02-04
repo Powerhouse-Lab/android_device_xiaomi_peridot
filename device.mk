@@ -176,6 +176,10 @@ $(foreach display_id, 4630947195234848131 4630947033261136259 463094654558005517
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
+# Device Settings
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -188,10 +192,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
-
-# FastCharge
-PRODUCT_PACKAGES += \
-    FastCharge
 
 # Graphics
 PRODUCT_PACKAGES += \
