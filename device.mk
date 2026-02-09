@@ -262,14 +262,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 
-# Keymint
+	# Keymint
 PRODUCT_PACKAGES += \
     android.hardware.security.keymint3-service.strongbox.nxp \
     android.hardware.weaver-service.nxp
 
+PRODUCT_PACKAGES += \
+    android.hardware.hardware_keystore_V3.xml
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml \
     frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml
+
+# KProfiles
+PRODUCT_PACKAGES += \
+    KProfiles
 
 # Lineage Health
 PRODUCT_PACKAGES += \

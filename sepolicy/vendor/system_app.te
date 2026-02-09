@@ -1,0 +1,2 @@
+# Kprofile
+allow system_app sysfs_kprofiles:file rw_file_perms;
