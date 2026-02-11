@@ -108,6 +108,11 @@ on post-fs-data
     # Enable WLAN cold boot calibration
     # write /sys/kernel/cnss/fs_ready 1
 
+    chown system system /sys/module/kprofiles/parameters/auto_kp
+    chmod 0660 /sys/module/kprofiles/parameters/auto_kp
+    chown system system /sys/module/kprofiles/parameters/kp_mode
+    chmod 0660 /sys/module/kprofiles/parameters/kp_mode
+
 on early-boot
     verity_update_state
 
