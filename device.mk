@@ -370,6 +370,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay
 
+# LunarisDolby
+#PRODUCT_PACKAGES += \
+ #   LunarisDolby
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
