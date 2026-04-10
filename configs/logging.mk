@@ -11,6 +11,11 @@ SPAMMY_LOG_TAGS := \
     AGM \
     AHAL \
     SRE \
+    PAL \
+    ACDB \
+    statsd \
+    imsd \
+    gsl \
     libsensor-boledalgo \
     libsensor-parseRGB \
     libsensor-qshcalapi \
