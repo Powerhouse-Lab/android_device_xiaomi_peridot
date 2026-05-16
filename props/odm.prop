@@ -1,5 +1,6 @@
 # Audio
 persist.vendor.audio.spf_restart=true
+persist.vendor.audio.spatializer.enable=true
 ro.vendor.audio.aw.monitor=true
 ro.vendor.audio.camera.loopback.support=false
 ro.vendor.audio.crscallvolume.support=false
@@ -14,6 +15,7 @@ vendor.audio.cpu.sched.cpuset.hb=248
 vendor.audio.cpu.sched.cpuset.he=248
 vendor.audio.cpu.sched.cpuset.hso=248
 vendor.audio.cpu.sched.onlyfast=false
+vendor.audio.dolby.control.support=true
 vendor.audio.cpu.sched=31
 vendor.audio.mic.status=off
 vendor.audio.rt.mode.onlyfast=false
