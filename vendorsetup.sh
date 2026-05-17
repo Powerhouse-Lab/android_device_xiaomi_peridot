@@ -56,18 +56,6 @@ info "Cloning Lunaris Dolby"
 warn "Cleaning Old Dolby repo"
 git clone -b 16 https://github.com/Poco-F6-resources/hardware_dolby.git hardware/dolby || fatal "Dolby clone failed"
 
-# GameBar
-info "Cloning GameBar from Kenway"
-warn "Cleaning up old packages/apps/GameBar directory"
-rm -rf packages/apps/GameBar
-git clone -b lineage-23.2 https://github.com/peridot-hyperos-2/packages_apps_GameBar.git packages/apps/GameBar || fatal "GameBar clone failed!"
-
-# BCR
-info "Cloning BCR"
-warn "Cleaning BCR"
-rm -rf vendor/bcr
-git clone -b main https://github.com/Poco-F6-resources/vendor_bcr.git vendor/bcr || fatal "BCR clone failed!"
-
 # Mi Cam
 info "Cloning Mi Cam"
 info "Cloning Miuicamera vendor"
@@ -77,8 +65,8 @@ info "Cloning Miuicamera device"
 git clone -b 16.2 --depth 1 https://github.com/Poco-F6-resources/device_xiaomi_peridot-miuicamera.git device/xiaomi/peridot-miuicamera || fatal "Device miuicamera clone failed!"
 
 # Keys
-info "Cloning your keys inf-keys"
-git clone -b 16 git@github.com:ProjectInfinity-X/vendor_infinity-priv_keys.git vendor/infinity-priv/keys/testkey
+info "Cloning your keys (inf-keys) adapt for los"
+git clone -b 16 git@github.com:ProjectInfinity-X/vendor_infinity-priv_keys.git vendor/lineage-priv/keys/testkey
 success "All resources cloned successfully!"
 
 return 0
