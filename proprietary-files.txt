@@ -1723,15 +1723,18 @@ vendor/bin/system_dlkm_modprobe.sh
 vendor/bin/vendor_modprobe.sh
 vendor/etc/init/hw/init.qti.kernel.rc
 
-# Keymint
-vendor/bin/hw/android.hardware.security.keymint-service-qti
-vendor/etc/init/android.hardware.security.keymint-service-qti.rc
-vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml
+# Keymaster
 vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqcbor.so
 vendor/lib64/libqtikeymaster4.so
+
+# Keymint
+vendor/bin/hw/android.hardware.security.keymint-service-qti
+vendor/etc/init/android.hardware.security.keymint-service-qti.rc
+vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml
+vendor/bin/KmInstallKeybox
 vendor/lib64/libqtikeymint.so
 
 # Listen
