@@ -66,7 +66,7 @@ git clone -b 16.2 --depth 1 https://github.com/Poco-F6-resources/device_xiaomi_p
 
 # Keys
 info "Cloning your keys (inf-keys) adapt for los"
-git clone -b 16 git@github.com:ProjectInfinity-X/vendor_infinity-priv_keys.git vendor/lineage-priv/keys/testkey
+git clone -b 16 git@github.com:ProjectInfinity-X/vendor_infinity-priv_keys.git vendor/lineage-priv/keys
 success "All resources cloned successfully!"
 
 return 0
