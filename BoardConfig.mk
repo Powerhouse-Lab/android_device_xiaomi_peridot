@@ -294,5 +294,8 @@ WIFI_FEATURE_HOSTAPD_11AX := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# MiuiCamera
+-include device/xiaomi/peridot-miuicamera/BoardConfig.mk
+
 # Vendor
 include vendor/xiaomi/peridot/BoardConfigVendor.mk

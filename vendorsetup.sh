@@ -57,12 +57,12 @@ warn "Cleaning Old Dolby repo"
 git clone -b 16 https://github.com/Poco-F6-resources/hardware_dolby.git hardware/dolby || fatal "Dolby clone failed"
 
 # Mi Cam
-info "Cloning Mi Cam"
+info "Cloning Normal Mi Cam"
 info "Cloning Miuicamera vendor"
-git clone -b 16.2 --depth 1 https://github.com/Poco-F6-resources/vendor_xiaomi_peridot-miuicamera.git vendor/xiaomi/peridot-miuicamera || fatal "Vendor miuicamera clone failed!"
+git clone -b 16.2 --depth 1 https://github.com/Poco-F6-resources/proprietary_vendor_xiaomi_peridot-miuicamera.git vendor/xiaomi/peridot-miuicamera || fatal "Vendor miuicamera clone failed!"
 
 info "Cloning Miuicamera device"
-git clone -b 16.2 --depth 1 https://github.com/Poco-F6-resources/device_xiaomi_peridot-miuicamera.git device/xiaomi/peridot-miuicamera || fatal "Device miuicamera clone failed!"
+git clone -b lineage-23.2 --depth 1 https://github.com/Poco-F6-resources/android_device_xiaomi_peridot-miuicamera.git device/xiaomi/peridot-miuicamera || fatal "Device miuicamera clone failed!"
 
 # Keys
 info "Cloning your keys (inf-keys) adapt for los"
