@@ -867,8 +867,6 @@
          <item>"/vendor/lib64/libllvm-qcom.so"</item>
          <item>"/vendor/lib64/libllvm-qgl.so"</item>
          <item>"/vendor/framework/androidx.camera.extensions.impl.jar"</item>
-         <item>"/vendor/bin/hw/vendor.qti.hardware.display.allocator-service"</item>
-         <item>"/vendor/bin/hw/vendor.qti.hardware.display.composer-service"</item>
      </string-array>
 
     <!-- Bytes that the PinnerService will pin for Home app -->
