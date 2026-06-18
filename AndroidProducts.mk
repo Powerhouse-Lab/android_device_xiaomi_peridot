@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/infinity_peridot.mk
+    $(LOCAL_DIR)/voltage_peridot.mk

@@ -29,7 +29,7 @@ info "Cloning All resources"
 
 # Vendor
 info "Cloning vendor tree"
-git clone -b 16.2 --depth 1 https://github.com/Poco-F6-resources/android_vendor_xiaomi_peridot.git vendor/xiaomi/peridot || fatal "Vendor tree clone failed!"
+git clone -b custom --depth 1 https://github.com/Poco-F6-resources/android_vendor_xiaomi_peridot.git vendor/xiaomi/peridot || fatal "Vendor tree clone failed!"
 
 # Kernel sources
 info "Cloning Kernel sources"
@@ -63,10 +63,5 @@ git clone -b 16.2 --depth 1 https://github.com/Poco-F6-resources/proprietary_ven
 
 info "Cloning Miuicamera device"
 git clone -b lineage-23.2 --depth 1 https://github.com/Poco-F6-resources/android_device_xiaomi_peridot-miuicamera.git device/xiaomi/peridot-miuicamera || fatal "Device miuicamera clone failed!"
-
-# Keys
-info "Cloning your keys (inf-keys) adapt for los"
-git clone -b 16 git@github.com:ProjectInfinity-X/vendor_infinity-priv_keys.git vendor/lineage-priv/keys
-success "All resources cloned successfully!"
 
 return 0
