@@ -58,8 +58,8 @@ git clone -b 16 https://github.com/Poco-F6-resources/hardware_dolby.git hardware
 
 # Mi Cam
 info "Cloning Normal Mi Cam"
-info "Cloning Miuicamera vendor"
-git clone -b 16.2 --depth 1 https://github.com/Poco-F6-resources/proprietary_vendor_xiaomi_peridot-miuicamera.git vendor/xiaomi/peridot-miuicamera || fatal "Vendor miuicamera clone failed!"
+info "Cloning Miuicamera vendor from Grewal"
+git clone -b sixteen-qpr2 --depth 1 https://gitlab.com/NoPrincessHere/proprietary_vendor_xiaomi_peridot-miuicamera.git vendor/xiaomi/peridot-miuicamera || fatal "Vendor miuicamera clone failed!"
 
 info "Cloning Miuicamera device"
 git clone -b lineage-23.2 --depth 1 https://github.com/Poco-F6-resources/android_device_xiaomi_peridot-miuicamera.git device/xiaomi/peridot-miuicamera || fatal "Device miuicamera clone failed!"
