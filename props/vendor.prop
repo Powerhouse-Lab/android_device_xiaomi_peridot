@@ -62,6 +62,9 @@ persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
 ro.bluetooth.powerstats.disable=true
 
+# Blur
+debug.renderengine.blur_algorithm=kawase
+
 # Camera
 camera.disable_zsl_mode=true
 ro.camera.enableCamera1MaxZsl=1
