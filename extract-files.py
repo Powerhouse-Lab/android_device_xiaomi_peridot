@@ -97,11 +97,18 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/etc/vintf/manifest/vendor.qti.qesdsys.service.xml': blob_fixup()
         .regex_replace(r'(?s)^.*?(?=<manifest)', ''),
     'system_ext/lib64/libwfdmmsrc_system.so': blob_fixup()
-        .add_needed('libgui_shim.so'),
+        .add_needed('libgui_shim.so')
+        .add_needed('libaudiobase.so'),
     'system_ext/lib64/libwfdnative.so': blob_fixup()
         .add_needed('libbinder_shim.so')
         .add_needed('libinput_shim.so')
         .remove_needed('android.hidl.base@1.0.so'),
+    'system_ext/lib64/libwfdservice.so': blob_fixup()
+        .replace_needed(
+            'android.media.audio.common.types-V4-cpp.so',
+            'android.media.audio.common.types-V5-cpp.so'
+      )
+        .add_needed('libaudiobase.so'),
     'system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so': blob_fixup()
         .replace_needed(
             'libprotobuf-cpp-full.so',
@@ -311,6 +318,10 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_unlock'),
     'odm/lib64/libsnpe_config.so': blob_fixup()
         .add_needed('liblog.so'),
+    'odm/lib64/anc.hal.so': blob_fixup()
+        .add_needed('libion.so'),
+    'vendor/bin/qseecom_sample_client': blob_fixup()
+        .add_needed('libion.so'),
     (
         'odm/lib64/libaudioroute_ext.so',
         'vendor/lib64/libagm.so',
@@ -321,6 +332,15 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed(
             'libaudioroute.so',
             'libaudioroute-v34.so'
+    ),
+
+    (
+        'odm/lib64/libmiSensorCtrl.so',
+        'odm/lib64/librhytheyecare.so',
+    ): blob_fixup()
+        .replace_needed(
+            'android.hardware.sensors-V2-ndk.so',
+            'android.hardware.sensors-V3-ndk.so'
     ),
     'vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy': blob_fixup()
         .add_line_if_missing('setsockopt: 1'),
