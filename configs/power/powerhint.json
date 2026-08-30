@@ -278,6 +278,7 @@
         "10000",
         "58"
       ],
+      "DefaultIndex": 1,
       "ResetOnInit": true
     },
     {
@@ -413,7 +414,7 @@
       "PowerHint": "INTERACTION",
       "Node": "CPUBigPlusClusterMinFreq",
       "Duration": 600,
-      "Value": "2918400"
+      "Value": "2150400"
     },
     {
       "PowerHint": "INTERACTION",
@@ -425,7 +426,7 @@
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 600,
-      "Value": "9999999"
+      "Value": "1824000"
     },
     {
       "PowerHint": "INTERACTION",
