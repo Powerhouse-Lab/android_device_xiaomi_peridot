@@ -57,8 +57,8 @@ allow hal_power_default {
 rw_dir_file(hal_power_default, sysfs_thermal)
 
 # Allow access to powercap directory
-allow hal_thermal_default sysfs_thermal:dir { read open getattr search };
-allow hal_thermal_default sysfs_thermal:file { read open getattr };
+allow hal_thermal_default vendor_sysfs_powercap:dir { read open getattr search };
+allow hal_thermal_default vendor_sysfs_powercap:file { read open getattr };
 
 # Do not audit dac_override capability
 dontaudit hal_power_default self:capability dac_override;
