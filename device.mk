@@ -16,6 +16,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 # Dolby
 $(call inherit-product, hardware/dolby/dolby.mk)
 
+# Parts
+$(call inherit-product, packages/apps/XiaomiParts/parts.mk)
+
 # MiuiCamera
 $(call inherit-product-if-exists, device/xiaomi/peridot-miuicamera/device.mk)
 
@@ -365,6 +368,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay
+
+include packages/apps/XiaomiParts/parts.mk
+TARGET_USE_DISPLAYFEATURES := true
+TARGET_SUPPORTS_NOTGAMETURBO := true
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
