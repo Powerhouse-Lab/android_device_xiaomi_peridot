@@ -45,6 +45,10 @@ rm -rf kernel/xiaomi/sm8635-devicetrees
 info "Cloning kernel devicetrees"
 git clone -b 17 https://github.com/Poco-F6-resources/android_kernel_xiaomi_sm8635-devicetrees.git kernel/xiaomi/sm8635-devicetrees || fatal "Kernel devicetrees clone failed!"
 
+# Parts
+info "Cloning XiaomiParts from GuidixX"
+git clone -b 17 https://github.com/GuidixX/packages_apps_XiaomiParts.git packages/apps/XiaomiParts || fatal "XiaomiParts clone failed!"
+
 # Hardware xiaomi
 info "Cloning hardware xiaomi"
 warn "Cleaning hardware/xiaomi directory (if exists)"
